@@ -1,0 +1,21 @@
+<!-- Index page  localhost:4567   -->
+<h1>Recipe List</h1>
+<h4><a href="/new">Create recipe</a></h4>
+<!-- title of page, Recipe List, then make a list of the recipes with attributes-->
+<ul>
+	<% @recipes.each do |recipe|%>
+		<li>
+			<!-- make the recipe bold -->
+			<h3><strong>
+				<a href="/recipe/<%=recipe.id %>"><%=recipe.name %></a>
+			</strong></h3>
+			<!-- recipe name is a link to the recipe ingredients and directions -->
+			<br>
+			<label>Prep Time:</label><%= recipe.prep_time %>
+			<br>
+			<label>Cook Time:</label><%= recipe.cook_time %>
+		</li>
+
+<h4><a href="/edit_blog/<%=recipe.id %>">edit recipe</a></h4>			
+	<% end %>
+</ul>

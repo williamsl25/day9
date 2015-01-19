@@ -1,0 +1,37 @@
+<h1>Edit Recipe</h1>
+
+<form action="/edit_blog/<%=recipe.id %>" method="post">
+	<br>
+	<div>
+		<label>Recipe Title</label>
+		<input type="text" name="recipe">
+	</div>
+	<br>
+	<!-- creates a hash- {name: ""} -->
+	<div>
+		<label>Prep Time:</label>
+		<input type="text" name="prep_time">
+	</div>
+	<br>
+	<div>
+		<label>Cook Time:</label>
+		<input type="text" name="cook_time">
+	</div>
+	<br>
+	<ul>
+		<div>
+			<label>Ingredients:</label>
+			<br>
+				<textarea type="essay"name="ingredients" rows="10" cols="80"></textarea>
+		</div>
+		
+		<div>
+			<label>Directions:</label>
+			<br>
+				<textarea name="directions" rows="10" cols="80"></textarea>
+		</div>
+	</ul>
+
+		<input type="submit" value="edit recipe">
+	<!-- value= Create Recipe are the html attributes -->
+</form>

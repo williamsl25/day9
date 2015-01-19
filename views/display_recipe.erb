@@ -1,0 +1,21 @@
+<strong><a href="/">Back</a></strong>
+
+<center><h1><%= @recipe.name %></h1></center>
+<h3>Prep Time</h3><%= @recipe.prep_time %> 
+<br>
+<h3>Cook Time</h3><%= @recipe.cook_time %>
+<br>
+<h4>Ingredients</h4><%= @recipe.ingredients %>
+
+<br>
+<h4>Directions</h4><%= @recipe.directions %>
+<br>
+<br>
+<form action="/delete_recipe/<%= @recipe.id %>" method="post">
+	<!-- to delete, pass the id from the database -->
+			<input type="hidden" name="_method" value="delete">
+			<input type="submit" value="delete">
+</form>
+<!-- _method = what is inside -->
+<!-- must give value= "delete" with the delete method you don't need value="" with get-->
+
