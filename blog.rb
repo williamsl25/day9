@@ -72,10 +72,23 @@ delete '/delete_recipe/:id' do
 end
 #takes the object off the database
 
-get '/edit_blog' do
+get '/edit_recipe/:id' do
 	@recipe = Recipe.get params[:id]
 	erb :edit_blog
 end
+
+patch '/save-recipe/:id' do
+	@recipe = Recipe.get params[:id]
+	@recipe.update name: params[:recipe]
+	@recipe.update prep_time: params[:prep_time]
+	@recipe.update cook_time: params[:cook_time]
+	@recipe.update ingredients: params[:ingredients]
+	@recipe.update directions: params[:directions]
+	@recipe.save  #call it -run it to create a new recipe
+	redirect to '/'
+end
+
+
 
 
 # Edit
